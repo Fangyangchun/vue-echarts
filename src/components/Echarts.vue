@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     drawPie (id) {
+      console.log(process.env.API_ROOT)
       this.chart = this.$echarts.init(document.getElementById(id))
       this.chart.setOption({
         title: {
