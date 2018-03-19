@@ -22,6 +22,12 @@ export default {
   methods: {
     drawPie (id) {
       console.log(process.env.API_ROOT)
+      this.axios.get('/static/test.json').then((res) => {
+        console.log('axios')
+        console.log(res.data)
+      }, (err) => {
+        console.log('服务器请求失败', err)
+      })
       this.chart = this.$echarts.init(document.getElementById(id))
       this.chart.setOption({
         title: {
